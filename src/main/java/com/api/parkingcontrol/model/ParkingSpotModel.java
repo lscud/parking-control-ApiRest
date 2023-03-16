@@ -11,7 +11,7 @@ public class ParkingSpotModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id; //identificador unico. Proprio para arquiteturas distribuidas
+    private Long id; // UUID identificador unico. Proprio para arquiteturas distribuidas
     @Column(nullable = false, unique = true, length = 10)
     private String parkingSpotNumber;
     @Column(nullable = false, unique = true, length = 7)
@@ -31,11 +31,11 @@ public class ParkingSpotModel implements Serializable {
     @Column(nullable = false, length = 30) //não pode ser nulo e está limitado a 30 caracteres
     private String block;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
