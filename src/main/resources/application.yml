@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/parking-control-db
+    username: root
+    password: root
+
+
+  jpa:
+    properties.hibernate.show_sql: true
+    properties.hibernate.format_sql: true
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: true #esse comando permite que quando o jackson for serializar o json em associações de mão dupla acione o jpa para trazer esse objetos amarrados.
+    hibernate:
+      ddl-auto: create
+
+  profiles:
+    active: test
+
+server:
+  port: 8080
